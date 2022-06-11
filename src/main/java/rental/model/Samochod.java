@@ -2,6 +2,7 @@ package rental.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
@@ -16,6 +17,7 @@ public class Samochod {
     private TypNadwozia typ;
 
     // dla sprawdzenia dostepnosci
+    @EqualsAndHashCode.Exclude
     private StatusSamochodu status;
 
 
