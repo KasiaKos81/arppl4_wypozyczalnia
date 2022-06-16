@@ -3,6 +3,7 @@ package rental.model;
 import rental.service.Wypozyczalnia;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class ParserSamochod {
@@ -19,7 +20,7 @@ public class ParserSamochod {
         String polecenie;
 
         do {
-            System.out.println("podaj polecenie: dostepneLista, wynajeteLista, usun, lub podaj 'quit' by zakonczyc");
+            System.out.println("podaj polecenie: dostepneLista, wynajeteLista, usun, podajCene, lub podaj 'quit' by zakonczyc");
             polecenie = scanner.next();
 
             switch (polecenie) {
@@ -35,6 +36,7 @@ public class ParserSamochod {
                 case "usun":
                     obslugaPoleceniaUsun();
                     break;
+
             }
         } while (!polecenie.equalsIgnoreCase("quit"));
     }
@@ -46,6 +48,7 @@ public class ParserSamochod {
         System.out.println("Podaj ilość dni:");
         int iloscDni = scanner.nextInt();
 
+        Optional <Double> cena = wypozyczalnia.sprawdzCeneSamochodu("numer", iloscDni);
     }
 
     public void obslugaPoleceniaDostepne(){

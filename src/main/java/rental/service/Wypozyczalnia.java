@@ -64,7 +64,7 @@ public void usunSamochod(String numerRejestracyjny){
         pojazdy.get(numerRejestracyjny).setStatus(StatusSamochodu.NIEDOSTEPNY);
 }
 
-    private Optional<Samochod> znajdzSamochod(String rejestracja) {
+    public Optional<Samochod> znajdzSamochod(String rejestracja) {
         return Optional.ofNullable(pojazdy.get(rejestracja));
     }
 
